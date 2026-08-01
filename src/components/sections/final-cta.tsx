@@ -23,13 +23,13 @@ export function FinalCta() {
             Find out what it said.
           </h2>
         </Reveal>
-        <Reveal delay={0.08}>
+        <Reveal delay={0.08} className="w-full max-w-xs sm:max-w-none sm:w-auto">
           <Button
             size="lg"
             nativeButton={false}
-            className="group h-12 bg-violet px-8 text-base text-primary-foreground shadow-[0_0_50px_-12px_var(--violet)] hover:bg-violet/90"
+            className="group h-12 w-full bg-violet px-8 text-base text-primary-foreground shadow-[0_0_50px_-12px_var(--violet)] hover:bg-violet/90 sm:w-auto"
             render={
-              <a href="mailto:hello@crevix.agency?subject=Book%20a%20call">
+              <a href="mailto:hello@Crevis.agency?subject=Book%20a%20call">
                 Book a call
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>

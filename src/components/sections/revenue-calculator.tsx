@@ -108,7 +108,7 @@ export function RevenueCalculator() {
 
           <p className="mt-8 text-xs text-muted-foreground">
             Based on a {Math.round(UPLIFT * 100)}% average revenue uplift
-            across Crevix clients within 6 months, from combined GEO
+            across Crevis clients within 6 months, from combined GEO
             citations and higher-converting landing pages. Estimate only —
             individual results vary.
           </p>

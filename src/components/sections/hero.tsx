@@ -4,12 +4,13 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, FileSearch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { usePersonalization } from "@/components/providers/personalization-provider";
 
 const engines = ["Google", "ChatGPT", "Perplexity", "Gemini"];
 
-const AUDIT_EMAIL = "hello@crevix.agency";
+const AUDIT_EMAIL = "hello@Crevis.agency";
 const AUDIT_SUBJECT = "Audit Request";
-const AUDIT_BODY = `Hi Crevix team,
+const AUDIT_BODY = `Hi Crevis team,
 
 I'd like to request a GEO Audit for my business.
 
@@ -23,6 +24,8 @@ const AUDIT_MAILTO = `mailto:${AUDIT_EMAIL}?subject=${encodeURIComponent(AUDIT_S
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
+  const { businessType, openModal } = usePersonalization();
+  const BusinessIcon = businessType?.icon;
 
   const fadeUp = (delay: number) => ({
     initial: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
@@ -40,16 +43,34 @@ export function Hero() {
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
         <motion.span
           {...fadeUp(0)}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-violet/25 bg-violet/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-violet-soft"
+          className="mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-violet/25 bg-violet/10 px-4 py-2 text-center text-xs font-medium uppercase tracking-wider text-violet-soft"
         >
-          For every business, in every industry
+          {businessType && BusinessIcon ? (
+            <>
+              <BusinessIcon className="h-3.5 w-3.5 shrink-0" />
+              <span>{businessType.label}</span>
+              <button
+                type="button"
+                onClick={openModal}
+                className="text-violet-soft/70 underline underline-offset-2 hover:text-violet-soft"
+              >
+                Edit
+              </button>
+            </>
+          ) : (
+            "For every business, in every industry"
+          )}
         </motion.span>
 
         <motion.h1
           {...fadeUp(0.08)}
           className="text-balance text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl md:text-[3.75rem]"
         >
-          Plumber. Dentist. Law firm. Boutique. Realtor.
+          {businessType ? (
+            <>Ask ChatGPT for the best {businessType.noun} nearby.</>
+          ) : (
+            "Plumber. Dentist. Law firm. Boutique. Realtor."
+          )}
           <br />
           <span className="text-gradient-violet">
             ChatGPT already picked one. Make it you.
@@ -60,20 +81,21 @@ export function Hero() {
           {...fadeUp(0.16)}
           className="mt-6 max-w-2xl text-balance text-lg text-muted-foreground sm:text-xl"
         >
-          Nobody scrolls ten blue links anymore. They ask AI once, and buy
-          from whoever it names. Crevix builds the tracking, the schema, and
-          the landing pages that put your name in that answer — live in your
-          dashboard, not a PDF next quarter.
+          Nobody scrolls ten blue links{businessType ? ` to find a ${businessType.noun}` : ""}{" "}
+          anymore. They ask AI once, and buy from whoever it names. Crevis
+          builds the tracking, the schema, and the landing pages that put
+          your name in that answer — live in your dashboard, not a PDF next
+          quarter.
         </motion.p>
 
         <motion.div
           {...fadeUp(0.24)}
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
+          className="mt-10 flex w-full max-w-sm flex-col items-stretch gap-3 sm:max-w-none sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-4"
         >
           <Button
             size="lg"
             nativeButton={false}
-            className="group h-12 bg-violet px-7 text-base text-primary-foreground shadow-[0_0_40px_-12px_var(--violet)] hover:bg-violet/90"
+            className="group h-12 w-full bg-violet px-7 text-base text-primary-foreground shadow-[0_0_40px_-12px_var(--violet)] hover:bg-violet/90 sm:w-auto"
             render={
               <a href="#cta">
                 Book a call
@@ -85,7 +107,7 @@ export function Hero() {
             size="lg"
             variant="outline"
             nativeButton={false}
-            className="h-12 border-white/15 bg-white/[0.03] px-7 text-base hover:bg-white/[0.06]"
+            className="h-12 w-full border-white/15 bg-white/[0.03] px-7 text-base hover:bg-white/[0.06] sm:w-auto"
             render={
               <a href={AUDIT_MAILTO}>
                 <FileSearch className="mr-1 h-4 w-4" />

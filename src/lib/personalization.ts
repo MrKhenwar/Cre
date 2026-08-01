@@ -1,3 +1,15 @@
+import {
+  Briefcase,
+  Building2,
+  Dumbbell,
+  HeartPulse,
+  Home,
+  Scale,
+  ShoppingBag,
+  UtensilsCrossed,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 import type { TierId } from "@/lib/pricing-data";
 
 export type Currency = "USD" | "GBP" | "EUR" | "CAD" | "AUD" | "INR" | "AED";
@@ -47,54 +59,75 @@ export function formatPrice(usd: number | null, currency: Currency): string {
 export type BusinessType = {
   id: string;
   label: string;
+  /** Short singular noun for slotting into headlines, e.g. "Ask ChatGPT for the best {noun} nearby." */
+  noun: string;
   example: string;
+  icon: LucideIcon;
 };
 
 export const BUSINESS_TYPES: BusinessType[] = [
   {
     id: "home-services",
     label: "Home Services",
+    noun: "plumber",
     example: "best emergency plumber near me",
+    icon: Wrench,
   },
   {
     id: "legal",
     label: "Legal",
+    noun: "lawyer",
     example: "best personal injury lawyer in your city",
+    icon: Scale,
   },
   {
     id: "medical-wellness",
     label: "Medical & Wellness",
+    noun: "med spa",
     example: "best med spa for Botox in your city",
+    icon: HeartPulse,
   },
   {
     id: "real-estate",
     label: "Real Estate",
+    noun: "realtor",
     example: "best realtor to sell a house in your city",
+    icon: Home,
   },
   {
     id: "retail-ecommerce",
     label: "Retail & E-commerce",
+    noun: "boutique",
     example: "best place to buy what you sell, online",
+    icon: ShoppingBag,
   },
   {
     id: "fitness",
     label: "Fitness & Studios",
+    noun: "gym",
     example: "best gym near me",
+    icon: Dumbbell,
   },
   {
     id: "hospitality",
     label: "Restaurants & Hospitality",
+    noun: "restaurant",
     example: "best restaurant near me",
+    icon: UtensilsCrossed,
   },
   {
     id: "professional-services",
     label: "Professional Services",
+    noun: "firm",
     example: "best firm like yours in your city",
+    icon: Briefcase,
   },
   {
     id: "other",
     label: "Something else",
+    noun: "business",
     example: "a business like yours, nearby",
+    icon: Building2,
   },
 ];
 

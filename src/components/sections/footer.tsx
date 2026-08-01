@@ -46,7 +46,7 @@ export function SiteFooter() {
                 C
               </span>
               <span className="text-base font-semibold tracking-tight">
-                Crevix
+                Crevis
               </span>
             </Link>
             <p className="max-w-xs text-sm text-muted-foreground">
@@ -58,7 +58,7 @@ export function SiteFooter() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Crevix on X (Twitter)"
+                aria-label="Crevis on X (Twitter)"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted-foreground transition-colors hover:border-violet/40 hover:text-foreground"
               >
                 <XIcon className="h-4 w-4" />
@@ -67,7 +67,7 @@ export function SiteFooter() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Crevix on LinkedIn"
+                aria-label="Crevis on LinkedIn"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted-foreground transition-colors hover:border-violet/40 hover:text-foreground"
               >
                 <LinkedinIcon className="h-4 w-4" />
@@ -96,7 +96,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} Crevix. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Crevis. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-foreground">
               Privacy

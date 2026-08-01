@@ -19,7 +19,7 @@ type StoreState = {
   activeStep: number;
 };
 
-const STORAGE_KEY = "crevix-personalization-v1";
+const STORAGE_KEY = "Crevis-personalization-v1";
 
 const DEFAULT_STATE: StoreState = {
   countryCode: null,

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
+import { usePersonalization } from "@/components/providers/personalization-provider";
 
 const splits = [
   { label: "Typed into Google, clicked a result", value: 54 },
@@ -9,6 +10,9 @@ const splits = [
 ];
 
 export function ProblemReframe() {
+  const { businessType } = usePersonalization();
+  const noun = businessType?.noun ?? null;
+
   return (
     <section className="relative mx-auto max-w-6xl px-6 py-28">
       <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
@@ -25,7 +29,12 @@ export function ProblemReframe() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-balance text-lg text-muted-foreground">
-              A customer looking for a plumber, a lawyer, or a boutique
+              A customer looking for{" "}
+              {noun ? (
+                <>a {noun}</>
+              ) : (
+                <>a plumber, a lawyer, or a boutique</>
+              )}{" "}
               doesn&apos;t type &ldquo;10 best near me&rdquo; anymore. They
               ask ChatGPT, Perplexity, or Google&apos;s AI Overview — and
               call, book, or buy from whichever business the answer names
@@ -65,7 +74,7 @@ export function ProblemReframe() {
               ))}
             </div>
             <p className="mt-8 border-t border-white/10 pt-6 text-sm text-muted-foreground">
-              Source: Crevix analysis of client search-referral data, 2026.
+              Source: Crevis analysis of client search-referral data, 2026.
             </p>
           </div>
         </Reveal>

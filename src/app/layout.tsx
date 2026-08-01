@@ -18,12 +18,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Crevix — Get cited in AI answers, not just ranked on Google",
+  title: "Crevis — Get cited in AI answers, not just ranked on Google",
   description:
-    "Crevix builds the proprietary tooling — GEO visibility tracking, automated schema injection, and conversion-tracked landing pages — that gets any business cited in ChatGPT, Perplexity, and Google AI Overviews.",
-  metadataBase: new URL("https://crevix.agency"),
+    "Crevis builds the proprietary tooling — GEO visibility tracking, automated schema injection, and conversion-tracked landing pages — that gets any business cited in ChatGPT, Perplexity, and Google AI Overviews.",
+  metadataBase: new URL("https://Crevis.agency"),
   openGraph: {
-    title: "Crevix — Get cited in AI answers, not just ranked on Google",
+    title: "Crevis — Get cited in AI answers, not just ranked on Google",
     description:
       "GEO visibility tracking, automated schema injection, and conversion-tracked landing pages for any business, in any industry.",
     type: "website",
