@@ -20,17 +20,18 @@ const columns = [
   {
     heading: "Services",
     links: [
-      { label: "SEO", href: "#pillars" },
-      { label: "GEO", href: "#pillars" },
-      { label: "Landing Pages", href: "#pillars" },
+      { label: "SEO", href: "/#pillars" },
+      { label: "GEO", href: "/#pillars" },
+      { label: "Landing Pages", href: "/#pillars" },
     ],
   },
   {
     heading: "Company",
     links: [
-      { label: "Process", href: "#process" },
-      { label: "Results", href: "#proof" },
-      { label: "Pricing", href: "#pricing" },
+      { label: "Process", href: "/#process" },
+      { label: "Results", href: "/#proof" },
+      { label: "Pricing", href: "/#pricing" },
+      { label: "Locations", href: "/locations" },
     ],
   },
 ];
@@ -41,7 +42,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex flex-col justify-between gap-12 md:flex-row">
           <div className="flex flex-col gap-4">
-            <Link href="#top" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center rounded-md bg-violet text-sm font-bold text-primary-foreground">
                 C
               </span>

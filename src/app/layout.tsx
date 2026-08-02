@@ -4,7 +4,21 @@ import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { PersonalizationProvider } from "@/components/providers/personalization-provider";
 import { LoadingScreen } from "@/components/providers/loading-screen";
 import { OnboardingModal } from "@/components/onboarding/onboarding-modal";
+import { SiteHeader } from "@/components/sections/site-header";
+import { SiteFooter } from "@/components/sections/footer";
 import "./globals.css";
+
+const SITE_URL = "https://crevis.agency";
+
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Crevis",
+  url: SITE_URL,
+  description:
+    "Crevis builds GEO visibility tracking, automated schema injection, and conversion-tracked landing pages for businesses of any size, in any industry.",
+  sameAs: ["https://twitter.com", "https://linkedin.com"],
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,10 +57,16 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+        />
         <SmoothScroll />
         <LoadingScreen />
         <PersonalizationProvider>
+          <SiteHeader />
           {children}
+          <SiteFooter />
           <OnboardingModal />
         </PersonalizationProvider>
       </body>

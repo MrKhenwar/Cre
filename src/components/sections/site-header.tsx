@@ -10,10 +10,11 @@ import { usePersonalization } from "@/components/providers/personalization-provi
 import { CURRENCY_INFO } from "@/lib/personalization";
 
 const navItems = [
-  { label: "Services", href: "#pillars" },
-  { label: "Process", href: "#process" },
-  { label: "Results", href: "#proof" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Services", href: "/#pillars" },
+  { label: "Process", href: "/#process" },
+  { label: "Results", href: "/#proof" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Locations", href: "/locations" },
 ];
 
 export function SiteHeader() {
@@ -47,7 +48,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
-          href="#top"
+          href="/"
           className="flex items-center gap-2"
           onClick={() => setMenuOpen(false)}
         >
@@ -59,7 +60,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-8">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -86,7 +87,7 @@ export function SiteHeader() {
             size="sm"
             nativeButton={false}
             className="h-10 bg-violet px-4 text-sm text-primary-foreground hover:bg-violet/90"
-            render={<a href="#cta">Book a call</a>}
+            render={<Link href="/#cta">Book a call</Link>}
           />
           <button
             type="button"

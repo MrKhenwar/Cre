@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 import {
   Dialog,
@@ -257,10 +258,10 @@ export function OnboardingModal() {
                 nativeButton={false}
                 className="group h-12 flex-1 bg-violet text-base font-medium text-primary-foreground shadow-[0_0_30px_-10px_var(--violet)] hover:bg-violet/90"
                 render={
-                  <a href="#cta" onClick={closeModal}>
+                  <Link href="/#cta" onClick={closeModal}>
                     Book a call
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                  </a>
+                  </Link>
                 }
               />
               <Button
@@ -269,9 +270,9 @@ export function OnboardingModal() {
                 nativeButton={false}
                 className="h-12 flex-1 border-white/15 bg-white/[0.03] text-base font-medium hover:bg-white/[0.06]"
                 render={
-                  <a href="#pricing" onClick={closeModal}>
+                  <Link href="/#pricing" onClick={closeModal}>
                     See full pricing
-                  </a>
+                  </Link>
                 }
               />
             </div>
