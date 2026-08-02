@@ -12,11 +12,14 @@ const SITE_URL = "https://crevis.agency";
 
 const organizationLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
   name: "Crevis",
   url: SITE_URL,
   description:
     "Crevis builds GEO visibility tracking, automated schema injection, and conversion-tracked landing pages for businesses of any size, in any industry.",
+  // Remote, service-area business — no fixed storefront, so areaServed
+  // replaces a physical address rather than fabricating one.
+  areaServed: "Worldwide",
   sameAs: ["https://twitter.com", "https://linkedin.com"],
 };
 

@@ -8,6 +8,7 @@ import { Proof } from "@/components/sections/proof";
 import { Testimonials } from "@/components/sections/testimonials";
 import { RevenueCalculator } from "@/components/sections/revenue-calculator";
 import { FreeMonthOffer } from "@/components/sections/free-month-offer";
+import { Faq } from "@/components/sections/faq";
 import { FinalCta } from "@/components/sections/final-cta";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <Testimonials />
       <RevenueCalculator />
       <FreeMonthOffer />
+      <Faq />
       <FinalCta />
     </main>
   );
