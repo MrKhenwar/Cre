@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getBreadcrumb, getLocationBySlug, LOCATIONS } from "@/lib/locations";
-import { PRICING_TIERS } from "@/lib/pricing-data";
-import { formatPrice } from "@/lib/personalization";
+import { FreeMonthOffer } from "@/components/sections/free-month-offer";
 
 const SITE_URL = "https://crevis.agency";
 
@@ -158,43 +157,7 @@ export default async function LocationPage({
         </section>
       )}
 
-      <section className="mx-auto max-w-5xl px-6 pb-28">
-        <h2 className="mb-5 text-xl font-semibold tracking-tight">
-          Pricing in India, in ₹
-        </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {PRICING_TIERS.map((tier) => (
-            <div
-              key={tier.id}
-              className="flex flex-col gap-4 rounded-xl border border-white/10 bg-card/40 p-6"
-            >
-              <h3 className="font-medium">{tier.name}</h3>
-              <div className="flex items-baseline gap-1.5">
-                <span className="text-2xl font-semibold">
-                  {formatPrice(tier.priceUSD, "INR")}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  {tier.cadence}
-                </span>
-              </div>
-              <ul className="flex flex-col gap-2">
-                {tier.features.slice(0, 3).map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-start gap-2 text-xs text-muted-foreground"
-                  >
-                    <Check className="mt-0.5 h-3 w-3 shrink-0 text-violet-soft" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-xs text-muted-foreground">
-          Estimated in INR for reference. All plans are billed in USD.
-        </p>
-      </section>
+      <FreeMonthOffer />
     </main>
   );
 }

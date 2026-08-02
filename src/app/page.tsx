@@ -7,7 +7,7 @@ import { Process } from "@/components/sections/process";
 import { Proof } from "@/components/sections/proof";
 import { Testimonials } from "@/components/sections/testimonials";
 import { RevenueCalculator } from "@/components/sections/revenue-calculator";
-import { Pricing } from "@/components/sections/pricing";
+import { FreeMonthOffer } from "@/components/sections/free-month-offer";
 import { FinalCta } from "@/components/sections/final-cta";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       <Proof />
       <Testimonials />
       <RevenueCalculator />
-      <Pricing />
+      <FreeMonthOffer />
       <FinalCta />
     </main>
   );

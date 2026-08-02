@@ -232,14 +232,17 @@ export function OnboardingModal() {
 
             <div className="glow-border relative rounded-xl border border-violet/30 bg-violet/[0.06] p-5">
               <span className="mb-2 inline-flex items-center rounded-full bg-violet px-2.5 py-0.5 text-xs font-medium text-primary-foreground">
-                Recommended for you
+                First month free
               </span>
               <div className="flex items-baseline justify-between">
                 <h4 className="text-base font-semibold">
                   {recommendedTier.name}
                 </h4>
                 <div className="text-right">
-                  <span className="font-mono text-xl font-semibold text-gradient-violet">
+                  <span className="text-sm font-medium text-muted-foreground">
+                    then{" "}
+                  </span>
+                  <span className="font-mono text-lg font-semibold text-gradient-violet">
                     {formatPrice(recommendedTier.priceUSD, currency)}
                   </span>
                   <span className="ml-1 text-xs text-muted-foreground">
@@ -248,7 +251,8 @@ export function OnboardingModal() {
                 </div>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                {recommendedTier.description}
+                Your first month covers the full audit and a 90-day growth
+                plan for this — free, no commitment. {recommendedTier.description}
               </p>
             </div>
 
@@ -259,7 +263,7 @@ export function OnboardingModal() {
                 className="group h-12 flex-1 bg-violet text-base font-medium text-primary-foreground shadow-[0_0_30px_-10px_var(--violet)] hover:bg-violet/90"
                 render={
                   <Link href="/#cta" onClick={closeModal}>
-                    Book a call
+                    Claim your free month
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 }
@@ -271,7 +275,7 @@ export function OnboardingModal() {
                 className="h-12 flex-1 border-white/15 bg-white/[0.03] text-base font-medium hover:bg-white/[0.06]"
                 render={
                   <Link href="/#pricing" onClick={closeModal}>
-                    See full pricing
+                    See the offer
                   </Link>
                 }
               />
@@ -279,7 +283,7 @@ export function OnboardingModal() {
 
             <div className="flex items-center justify-between text-xs text-muted-foreground">
               <span>
-                Estimated in {currency}. Billed in USD; shown for reference.
+                Ongoing rate estimated in {currency}. Billed in USD.
               </span>
               <button
                 type="button"
