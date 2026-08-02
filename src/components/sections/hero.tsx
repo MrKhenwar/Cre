@@ -8,7 +8,7 @@ import { usePersonalization } from "@/components/providers/personalization-provi
 
 const engines = ["Google", "ChatGPT", "Perplexity", "Gemini"];
 
-const AUDIT_EMAIL = "hello@Crevis.agency";
+const AUDIT_EMAIL = "viditkhenwar@gmail.com";
 const AUDIT_SUBJECT = "Audit Request";
 const AUDIT_BODY = `Hi Crevis team,
 
