@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Globe, Menu, X } from "lucide-react";
@@ -52,9 +53,14 @@ export function SiteHeader() {
           className="flex items-center gap-2"
           onClick={() => setMenuOpen(false)}
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-violet text-sm font-bold text-primary-foreground">
-            C
-          </span>
+          <Image
+            src="/logo-icon.png"
+            alt=""
+            width={28}
+            height={17}
+            priority
+            className="h-6 w-auto"
+          />
           <span className="text-base font-semibold tracking-tight">
             Crevis
           </span>

@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { getLocationBySlug, LOCATIONS } from "@/lib/locations";
 
@@ -19,6 +21,8 @@ export default async function Image({
   const { slug } = await params;
   const location = getLocationBySlug(slug);
   const name = location?.name ?? "India";
+  const logo = await readFile(join(process.cwd(), "public/logo-icon.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -45,21 +49,7 @@ export default async function Image({
             marginBottom: 32,
           }}
         >
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 14,
-              background: "#8b5cf6",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 30,
-              fontWeight: 700,
-            }}
-          >
-            C
-          </div>
+          <img src={logoSrc} width={64} height={39} alt="" />
           <div style={{ fontSize: 34, fontWeight: 600 }}>Crevis</div>
         </div>
         <div

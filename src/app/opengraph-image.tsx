@@ -1,10 +1,15 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "Crevis — Get cited in AI answers, not just ranked on Google";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const logo = await readFile(join(process.cwd(), "public/logo-icon.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -30,21 +35,7 @@ export default function Image() {
             marginBottom: 40,
           }}
         >
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: 16,
-              background: "#8b5cf6",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 36,
-              fontWeight: 700,
-            }}
-          >
-            C
-          </div>
+          <img src={logoSrc} width={72} height={44} alt="" />
           <div style={{ fontSize: 40, fontWeight: 600 }}>Crevis</div>
         </div>
         <div

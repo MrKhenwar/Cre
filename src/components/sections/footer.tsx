@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -43,9 +44,13 @@ export function SiteFooter() {
         <div className="flex flex-col justify-between gap-12 md:flex-row">
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-violet text-sm font-bold text-primary-foreground">
-                C
-              </span>
+              <Image
+                src="/logo-icon.png"
+                alt=""
+                width={28}
+                height={17}
+                className="h-6 w-auto"
+              />
               <span className="text-base font-semibold tracking-tight">
                 Crevis
               </span>
