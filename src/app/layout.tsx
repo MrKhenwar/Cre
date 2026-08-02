@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { PersonalizationProvider } from "@/components/providers/personalization-provider";
+import { LoadingScreen } from "@/components/providers/loading-screen";
 import { OnboardingModal } from "@/components/onboarding/onboarding-modal";
 import "./globals.css";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <SmoothScroll />
+        <LoadingScreen />
         <PersonalizationProvider>
           {children}
           <OnboardingModal />
